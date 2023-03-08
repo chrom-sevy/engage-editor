@@ -3,8 +3,7 @@ import App from "./App.svelte";
 
 import init from "../pkg/fe_engage_save_editor.js";
 
-await init();
-
+init()
 const app = new App({
   target: document.getElementById("app"),
 });
