@@ -1,0 +1,29 @@
+/* Write your global styles here, in PostCSS syntax */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@tailwind components;
+
+:root {
+  background: #fef2f2
+}
+
+.download-button {
+  @apply bg-red-500 text-blue-100 font-bold px-3 py-2 rounded-lg my-2 mx-1;
+}
+
+.download-button:hover {
+  @apply bg-red-700;
+}
+
+.upload-button {
+  @apply bg-blue-500 text-red-100 font-bold px-3 py-2 rounded-lg my-2 mx-1;
+}
+
+.upload-button:hover {
+  @apply bg-blue-600;
+}
+
+@tailwind utilities;
