@@ -28,16 +28,16 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      - name: Use Node.js 16.x
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16.x
+      # - name: Use Node.js 16.x
+      #   uses: actions/setup-node@v3
+      #   with:
+      #     node-version: 16.x
       - name: Install dependencies
         run: npm ci
-      - name: build
-        run: |
-          npm install
-          npm run build
+      # - name: build
+      #   run: |
+      #     npm install
+      #     npm run build
       - name: Build and deploy
         uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
