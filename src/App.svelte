@@ -4,7 +4,6 @@
   import type {SaveFile} from "../pkg/fe_engage_save_editor.js";
   import RelayItemsShow from "./lib/relay_items_show.svelte";
   import BondMoney from "./lib/bond_money.svelte";
-    import RelayItemShow from "./lib/relay_item_show.svelte";
   let save: SaveFile = null;
   enum Page {
     BondMoney,
@@ -30,7 +29,7 @@
   <RelayItemsShow bind:save/>
   {:else if page == Page.BondMoney}
   <button class=" upload-button nav-item text-left" on:click={() => page = Page.RelayItems}>
-    <span>Edit Relay Items<span>
+    <span>Edit MISC<span>
   </button>
   <BondMoney bind:save/>
   {/if}

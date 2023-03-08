@@ -69,7 +69,7 @@
 </div>
 <div class="nav-right">
     <span class="p-3 text-red-50">You are now obliged to use <span class=" text-blue-500">Chrom</span><span class=" text-orange-300">!</span><span class=" text-red-500">Sevy</span></span>
-    <a class="nav-item p-3 text-red-50" href="/">
+    <a class="nav-item p-3 text-red-50" href="https://github.com/chrom-sevy/engage-editor">
          Github 
     </a>
 </div>

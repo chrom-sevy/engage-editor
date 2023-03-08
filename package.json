@@ -13,6 +13,7 @@
     "@sveltejs/vite-plugin-svelte": "^1.1.0",
     "@tsconfig/svelte": "^3.0.0",
     "autoprefixer": "^10.4.13",
+    "gh-pages": "^5.0.0",
     "postcss": "^8.4.19",
     "postcss-load-config": "^4.0.1",
     "svelte": "^3.52.0",
