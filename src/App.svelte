@@ -7,7 +7,7 @@
   let save: SaveFile = null;
 </script>
 
-<TopNavbar/>
+<TopNavbar bind:save/>
 
 
 

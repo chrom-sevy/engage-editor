@@ -3,23 +3,11 @@
     import Item from "./item.svelte";
     export let save: SaveFile;
     const found_name = get(); // this ain't even called
-    function setter1(s: SaveFile, v: number) {
-        s.set_money(v);
-    }
-    function getter1(s: SaveFile) {
-        return s.get_money();
-    }
-    function setter2(s: SaveFile, v: number) {
-        s.set_bond_fragments(v);
-    };
-    function getter2(s: SaveFile) {
-        return s.get_bond_fragments();
-    }
     function get(): boolean {
 
         try {
-            getter1(save);
-            getter2(save);
+            save.get_bond_fragments();
+            save.get_money();
             return true;
         } catch (e) {
             console.log(e)
@@ -37,13 +25,13 @@
     </p>
     <br>
     <Item name="Money" bind:save
-        value_getter={getter1}
-        value_setter={setter1}
+        value_getter={(s) => s.get_money()}
+        value_setter={(s, value) => s.set_money(value)}
     />
 
-    <Item name="bond" bind:save
-    value_getter={getter2}
-    value_setter={setter2}
+    <Item name="Bond" bind:save
+    value_getter={(s) => s.get_bond_fragments()}
+    value_setter={(s, value) => s.set_bond_fragments(value)}
 />
 
 </div>

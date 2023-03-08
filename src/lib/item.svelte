@@ -4,7 +4,7 @@
     export let name: String;
     export let save: SaveFile;
     export let value_getter: (save: SaveFile) => number;
-    export let value_setter: (save:SaveFile, value: number) => void;
+    export let value_setter: (save: SaveFile, value: number) => void;
     let value: number = value_getter(save);
 
     function set_value(event) {

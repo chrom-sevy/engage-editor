@@ -1,3 +1,23 @@
+<script lang="ts">
+  import type { SaveFile } from "../../pkg/fe_engage_save_editor";
+  export let save: SaveFile
+
+  function download_save() {
+    if (save == null) {
+      alert("No save loaded");
+      return;
+    }
+
+    // download save
+    const blob = new Blob([save.get_data()], { type: "application/octet-stream" });
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+    a.download = save.get_name();
+    a.href = url;
+    a.click();
+  }
+</script>
 <style>
     .navbar {
       position: sticky;
@@ -31,14 +51,19 @@
       justify-content: flex-end;
     }
 </style>
+
+
   
 <nav class="navbar">
 <div class="nav-left">
     <a class="nav-item p-3 text-red-50" href="/">FEESE</a>
-    <button class=" upload-button nav-item">
-        <span>Choose New</span>
+    <button class=" upload-button nav-item" on:click={() => {
+      // redirect to /
+      window.location.href = "/";
+    }}>
+        <span>Choose new</span>
     </button>
-    <button class=" download-button nav-item">
+    <button class=" download-button nav-item" on:click={download_save}>
         <span>Download<span>
     </button>
 </div>
