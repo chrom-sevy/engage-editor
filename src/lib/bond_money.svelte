@@ -2,7 +2,7 @@
     import type { SaveFile } from "../../pkg/fe_engage_save_editor";
     import Item from "./item.svelte";
     export let save: SaveFile;
-    const found_name = get(); // this ain't even called
+    const found_name = get();
     function get(): boolean {
 
         try {
