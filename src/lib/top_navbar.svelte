@@ -1,6 +1,9 @@
 <script lang="ts">
   import type { SaveFile } from "../../pkg/fe_engage_save_editor";
+  import { Page } from "./page";
   export let save: SaveFile
+  export let save2: SaveFile
+  export let page: Page;
 
   function download_save() {
     if (save == null) {
@@ -8,7 +11,11 @@
       return;
     }
 
+    if (page == Page.BondMoney) {
+      save = save2.clone();
+    }
     // download save
+    save.update_crc32();
     const blob = new Blob([save.get_data()], { type: "application/octet-stream" });
     const url = URL.createObjectURL(blob);
 
@@ -56,10 +63,10 @@
   
 <nav class="navbar">
 <div class="nav-left">
-    <a class="nav-item p-3 text-red-50" href="/">FEESE</a>
+    <a class="nav-item p-3 text-red-50" href="/engage-editor/">FEESE</a>
     <button class=" upload-button nav-item" on:click={() => {
       // redirect to /
-      window.location.href = "/";
+      window.location.href = "/engage-editor/";
     }}>
         <span>Choose new</span>
     </button>
