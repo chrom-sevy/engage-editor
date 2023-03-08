@@ -10,15 +10,19 @@
     function set_value(event) {
         let b = parseInt(event.target.value);
         event.target.value = value;
-        if (b > 4294967295) {
-            b = 4294967295;
+        if (b > 2147483647) {
+            b = 2147483647;
             event.target.value = b;
+            return;
         }
-        if (b >= 0) {
-            value = b;
-            value_setter(save, value);
-            console.log("saving " + value_getter(save))
+        if (b <= -2147483648) {
+            b = -2147483648;
+            event.target.value = b;
+            return;
         }
+        value = b;
+        value_setter(save, value);
+        console.log("saving " + value_getter(save))
     }
     function load_input(event) {
         event.target.value = value_getter(save);

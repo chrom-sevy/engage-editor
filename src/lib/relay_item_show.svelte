@@ -5,23 +5,27 @@
     export let name: String;
     export let id: RelayItem;
     export let save: SaveFile;
-    let value: number = save.get_simple_u32(id);
+    let value: number = save.get_simple_i32(id);
 
     function set_value(event) {
         let b = parseInt(event.target.value);
         event.target.value = value;
-        if (b > 4294967295) {
-            b = 4294967295;
+        if (b > 2147483647) {
+            b = 2147483647;
             event.target.value = b;
+            return;
         }
-        if (b >= 0) {
-            value = b;
-            save.set_simple_u32(id, value)
-            console.log("saving " + save.get_simple_u32(id))
+        if (b < -2147483648) {
+            b = -2147483648;
+            event.target.value = b;
+            return;
         }
+        value = b;
+        save.set_simple_i32(id, value)
+        console.log("saving " + save.get_simple_i32(id))
     }
     function load_input(event) {
-        event.target.value = save.get_simple_u32(id);
+        event.target.value = save.get_simple_i32(id);
         value = event.target.value;
         console.log(value);
     }
