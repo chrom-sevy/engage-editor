@@ -16,4 +16,6 @@ export enum RelayItem {
     ArmorBane = "G_所持_IID_素材_重装特効",
     FlierBane = "G_所持_IID_素材_飛行特効",
     CorruptedBane = "G_所持_IID_素材_異形特効",
+    MasterSeal = "G_所持_IID_マスタープルフ",
+    SecondSeal = "G_所持_IID_チェンジプルフ"
 }

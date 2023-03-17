@@ -40,6 +40,12 @@
 <RelayItemShow name="Steel Ingot" id={RelayItem.SteelIngot} bind:save/>
 <RelayItemShow name="Silver Ingot" id={RelayItem.SilverIngot} bind:save/>
 
+<p class="text-2xl text-blue-700 font-semibold">Seals
+</p>
+<br>
+<RelayItemShow name="Master Seal" id={RelayItem.MasterSeal} bind:save/>
+<RelayItemShow name="Second Seal" id={RelayItem.SecondSeal} bind:save/>
+
 </div>
 <style> 
     /* add column space left */
