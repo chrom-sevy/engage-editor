@@ -1,3 +1,8 @@
+Triabolical has made a better up-to-date save editor for Engage called sommie editor. Please check it out instead!
+
+https://www.nexusmods.com/fireemblemengage/mods/32
+
+
 # Engage Editor
 
 has basic save editing feature such as editing Relay Items, Bond Fragments, Forging materials and money.
